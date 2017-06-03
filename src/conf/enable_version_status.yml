@@ -1,0 +1,7 @@
+# This yml file is for configuring
+# enable version status
+# when change the verison status can synchronize the task status
+
+status:
+  - apr
+  - rev
