@@ -18,7 +18,8 @@ def parse(conf_file_name, key):
     with open(conf_file, "r") as f:
         conf_data = yaml.load(f)
     if not conf_data.__contains__(key):
-        raise KeyError("key: %s not in the config file" % key)
+        print "KeyError key[%s] not in the config file: %s." % (key, conf_file)
+        return
     value = conf_data[key]
     return value
 
