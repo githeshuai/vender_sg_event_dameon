@@ -45,7 +45,7 @@ def change_down_stream_task_status(sg, logger, event, args):
     # if task step is Omit, return
     for task in down_stream_tasks:
         task_status = task["sg_status_list"]
-        if task_status in ["Omit"]:
+        if task_status in ["omt"]:
             continue
         elif task_status in ["wtg"]:
             sg.update("Task", task["id"], {"sg_status_list": "rdy"})

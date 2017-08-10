@@ -1,2 +1,2 @@
-Model: ["Texture"]
+Model: ["Texture", "Rig"]
 Texture: ["Surface"]
