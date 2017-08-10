@@ -26,7 +26,7 @@ def change_down_stream_task_status(sg, logger, event, args):
     meta_data = event['meta']
     if meta_data["entity_type"] != "Task":
         return
-    if meta_data["new_value"] != "fin":
+    if meta_data["new_value"] != "cmpt":
         return
     # get the current task step
     task_id = meta_data["entity_id"]
@@ -51,7 +51,7 @@ def change_down_stream_task_status(sg, logger, event, args):
             sg.update("Task", task["id"], {"sg_status_list": "rdy"})
             logger.info("Change task[%s] status to rdy" % task["id"])
         else:
-            sg.update("Task", task["id"], {"sg_status_list": "rev"})
+            sg.update("Task", task["id"], {"sg_status_list": "rvs"})
             logger.info("Change task[%s] status to rev" % task["id"])
 
 

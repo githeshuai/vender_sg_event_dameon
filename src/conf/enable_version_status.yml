@@ -3,5 +3,5 @@
 # when change the verison status can synchronize the task status
 
 status:
-  - apr
-  - rev
+  apr: ip
+  rev: rvs

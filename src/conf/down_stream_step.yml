@@ -1,2 +1,2 @@
-MDL: ["RIG", "TXT"]
-RIG: ["TXT"]
+Model: ["Texture"]
+Texture: ["Surface"]

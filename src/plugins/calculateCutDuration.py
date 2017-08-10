@@ -50,4 +50,3 @@ def calculateCutDuration(sg, logger, event, args):
     # update the Shot with the new duration
     sg.update("Shot", shot["id"], {'sg_cut_duration': new_duration})
     logger.info("%s: updated Cut Duration to %s" % (shot['code'], new_duration))
-

@@ -25,8 +25,8 @@ def synTaskStatus(sg, logger, event, args):
     if 'new_value' not in event['meta']:
         return
     enable_version_status = conf_parser.parse("enable_version_status", "status")
-    new_status = event["meta"]["new_value"]
-    if new_status not in enable_version_status:
+    version_new_status = event["meta"]["new_value"]
+    if version_new_status not in enable_version_status:
         return
     # lookup the version
     filters = [['id', 'is', event['entity']['id']]]
@@ -39,5 +39,10 @@ def synTaskStatus(sg, logger, event, args):
         return
     # change the task status
     task_id = task_info["id"]
-    sg.update("Task", task_id, {"sg_status_list": new_status})
-    logger.info("Change task[id=%s] status: %s" % (task_id, new_status))
+    task_new_status = enable_version_status.get(version_new_status)
+    sg.update("Task", task_id, {"sg_status_list": task_new_status})
+    logger.info("Change task[id=%s] status: %s" % (task_id, task_new_status))
+
+
+if __name__ == "__main__":
+    print conf_parser.parse("enable_version_status", "status")
