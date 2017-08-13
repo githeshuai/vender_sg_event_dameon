@@ -1,6 +1,8 @@
 # This yml file is for configuring
 # enable version status
 # when change the verison status can synchronize the task status
+# 配置version状态和task状态的对应关系，当version的状态改变时，改变关联的task的状态
+# key为version的状态， value为task的状态
 
 status:
   apr: ip
