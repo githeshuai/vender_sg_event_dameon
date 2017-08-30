@@ -2,5 +2,5 @@
 # 配置下游环节
 
 
-Model: ["Texture", "Rig"]
+Model: ["Texture", "Rig", "Surface"]
 Texture: ["Surface"]
